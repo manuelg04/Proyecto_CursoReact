@@ -3,11 +3,11 @@ import nodemailer from "nodemailer"
 export const emailRegistro =async (datos) => {
     const { email, nombre, token } = datos
     const  transport = nodemailer.createTransport({
-        host: "smtp.mailtrap.io",
-        port: 2525,
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
         auth: {
-          user: "1a2b19dec68abe",
-          pass: "d45dde00ddccc4"
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS
         }
       });
 
@@ -33,12 +33,12 @@ export const emailOlvidePassword =async (datos) => {
   // TODO: MOVER HACIA VARIABLES DE ENTORNO
 
   const  transport = nodemailer.createTransport({
-      host: "smtp.mailtrap.io",
-      port: 2525,
-      auth: {
-        user: "1a2b19dec68abe",
-        pass: "d45dde00ddccc4"
-      }
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
     });
 
     //Informacion del email
