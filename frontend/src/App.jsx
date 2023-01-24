@@ -10,6 +10,8 @@ import RutaProtegida from './layouts/RutaProtegida'
 import { AuthProvider } from './context/AuthProvider'
 import NuevoProyecto from './paginas/NuevoProyecto'
 import { ProyectosProvider } from './context/ProyectosProvider'
+import Proyecto from './paginas/Proyecto'
+import EditarProyecto from './paginas/EditarProyecto'
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
       <Route path="/proyectos" element={<RutaProtegida/>}>
         <Route index element={<Proyectos />} />
         <Route path='crear-proyecto' element={<NuevoProyecto/>}/>
+        <Route path=':id' element={<Proyecto/>}/>
+        <Route path='editar/:id' element={<EditarProyecto/>}/>
         </Route>
 
     </Routes>
